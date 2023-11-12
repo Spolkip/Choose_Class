@@ -1,0 +1,8 @@
+name: Choose_Class
+version: '${version}'
+main: me.Spolkip.classes
+api-version: '1.20'
+commands:
+  choose:
+    description: "Chooses a class"
+    usage: /<command>
