@@ -46,6 +46,7 @@ public class GUIClickEvent implements Listener {
         ItemStack fireofinvisibility = classes.custom_items_map.get("FireOfInvisibility").getItem();
         ItemStack regensword = classes.custom_items_map.get("Stun_Sword").getItem();
         ItemStack Multple_bow = classes.custom_items_map.get("Mutipleshot_bow").getItem();
+        ItemStack Magic_wand = classes.custom_items_map.get("Magic_wand").getItem();
 
 
 
@@ -98,7 +99,7 @@ public class GUIClickEvent implements Listener {
                 case ENCHANTING_TABLE:
                     if (e.getClick() == ClickType.LEFT) {
                         p.closeInventory();
-                        ItemStack[] items_four = {new ItemStack(LEATHER_BOOTS), new ItemStack(LEATHER_LEGGINGS), new ItemStack(LEATHER_CHESTPLATE), new ItemStack(LEATHER_HELMET), new ItemStack(ENCHANTING_TABLE)};
+                        ItemStack[] items_four = {Magic_wand};
                         p.getInventory().setContents(items_four);
                         p.sendMessage(Component.text("You are now a §9Wizard", TextColor.color(255, 255, 0)));
                     } else if (e.getClick() == ClickType.RIGHT) {

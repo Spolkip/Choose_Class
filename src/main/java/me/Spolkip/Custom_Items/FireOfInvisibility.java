@@ -4,8 +4,8 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
@@ -75,5 +75,12 @@ public class FireOfInvisibility extends custom_items {
                 p.sendMessage(Component.text("You will be able to change class again in " + (mins) + " minutes and " + (seconds) + " seconds."));
             }
         }
+    }
+
+
+
+    @Override
+    public void CancelEvent(Player p, HangingBreakEvent e) {
+
     }
 }

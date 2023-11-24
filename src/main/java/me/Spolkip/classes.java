@@ -3,6 +3,7 @@ package me.Spolkip;
 
 import me.Spolkip.Commands.class_command;
 import me.Spolkip.Commands.races_command;
+import me.Spolkip.Commands.reload_command;
 import me.Spolkip.Custom_Items.*;
 import me.Spolkip.events.GUICancel;
 import me.Spolkip.events.GUIClickEvent;
@@ -41,11 +42,12 @@ public final class classes extends JavaPlugin {
 
         getCommand("class").setExecutor(new class_command());
         getCommand("race").setExecutor(new races_command());
+        getCommand("choosereload").setExecutor(new reload_command());
         getServer().getPluginManager().registerEvents(new GUIClickEvent(), this);
         getServer().getPluginManager().registerEvents(new leave_join(), this);
         getServer().getPluginManager().registerEvents(new GUICancel(), this);
         registerListeners(new CustomItemHandler());
-        registerItems(new FireOfInvisibility(), new Stun_Sword(), new Mutipleshot_bow());
+        registerItems(new FireOfInvisibility(), new Stun_Sword(), new Mutipleshot_bow(), new Magic_wand());
 
 
 

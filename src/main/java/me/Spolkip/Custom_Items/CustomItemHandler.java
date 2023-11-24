@@ -1,27 +1,17 @@
 package me.Spolkip.Custom_Items;
 
 import me.Spolkip.classes;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-
-import java.util.Arrays;
 
 import static me.Spolkip.classes.rpgItemKey;
-import static org.bukkit.Bukkit.getName;
 
 public class CustomItemHandler implements Listener {
 
@@ -39,6 +29,12 @@ public class CustomItemHandler implements Listener {
         customItem.handleLeftClick(p, heldItem, event);
     }
 }
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void CancelEvent(HangingBreakEvent event) {
+        if (event.getCause() == HangingBreakEvent.RemoveCause.EXPLOSION) {
+            event.setCancelled(true);
+        }
+    }
 
 
     private  boolean isCustomItem(ItemStack itemstack){

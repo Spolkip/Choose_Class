@@ -5,7 +5,10 @@ import me.Spolkip.Custom_Items.Utils.Common;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -38,6 +41,9 @@ public abstract class custom_items {
     }
 
 
+
+
+
     public ItemStack getItem() {
 
 
@@ -55,5 +61,7 @@ public abstract class custom_items {
         itemstack.setItemMeta(itemmeta);
         return itemstack;
     }
+
+    public abstract void CancelEvent(Player p, HangingBreakEvent e);
 }
 
